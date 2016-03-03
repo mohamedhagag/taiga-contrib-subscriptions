@@ -1,0 +1,11 @@
+p.create-warning(ng-if="!canCreatePrivateProjects.valid")
+    svg.icon.icon-exclamation(ng-if="canCreatePrivateProjects.reason")
+        use(xlink:href="#icon-exclamation")
+    span(ng-if="canCreatePrivateProjects.reason == 'max_private_projects'") {{ 'ADMIN.PROJECT_PROFILE.MAX_PRIVATE_PROJECTS' | translate }}
+    span(ng-if="canCreatePrivateProjects.reason == 'max_members_private_projects'") {{ 'ADMIN.PROJECT_PROFILE.MAX_PRIVATE_PROJECTS_MEMBERS' | translate }}
+    
+p.create-warning(ng-if="!canCreatePublicProjects.valid")
+    svg.icon.icon-exclamation(ng-if="canCreatePrivateProjects.reason")
+        use(xlink:href="#icon-exclamation")
+    span(ng-if="canCreatePublicProjects.reason == 'max_public_projects'") {{ 'ADMIN.PROJECT_PROFILE.MAX_PUBLIC_PROJECTS' | translate }}
+    span(ng-if="canCreatePublicProjects.reason == 'max_members_public_projects'") {{ 'ADMIN.PROJECT_PROFILE.MAX_PUBLIC_PROJECTS_MEMBERS' | translate }}
