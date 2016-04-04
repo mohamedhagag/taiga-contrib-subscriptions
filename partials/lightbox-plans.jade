@@ -1,6 +1,8 @@
 section.plans-container(ng-if="!vm.selectedPlan")
-    svg.close.icon.icon-close(title="{{'COMMON.CLOSE' | translate}}")
-        use(xlink:href="#icon-close")
+    tg-svg.close(
+        svg-icon="icon-close"
+        svg-title="COMMON.CLOSE"
+    )
     h2.title(ng-bind-html="'SUBSCRIPTIONS.PLANS_SELECTOR.TITLE' | translate")
     p.subtitle(ng-bind-html="'SUBSCRIPTIONS.PLANS_SELECTOR.FREE' | translate")
     .plans-table
@@ -65,8 +67,10 @@ section.plans-container(ng-if="!vm.selectedPlan")
             .plan-data(ng-bind-html="'SUBSCRIPTIONS.MEMBERS_LIMIT' | translate: {number: vm.myPlan.current_plan.project_members}")
 
 section.plans-container.invalid-plan(ng-if="vm.selectedPlan === 'invalid'")
-    svg.close.icon.icon-close(href="", title="{{'COMMON.CLOSE' | translate}}")
-        use(xlink:href="#icon-close")
+    tg-svg.close(
+        svg-icon="icon-close"
+        svg-title="COMMON.CLOSE"
+    )
     h2.title(ng-bind-html="'SUBSCRIPTIONS.DOWNGRADE.TITLE' | translate")
     p(ng-bind-html="'SUBSCRIPTIONS.DOWNGRADE.REASON' | translate: {plan: vm.invalidPlan.name, projects: vm.invalidPlan.private_projects, members: vm.invalidPlan.project_members}")
     p.reason(ng-bind-html="'SUBSCRIPTIONS.DOWNGRADE.MORE_PROJECTS' | translate: {projects: vm.invalidPlan.private_projects}")
@@ -87,8 +91,10 @@ section.plans-container.invalid-plan(ng-if="vm.selectedPlan === 'invalid'")
     )
 
 section.plans-container.valid-plan(ng-if="vm.selectedPlan === 'valid'")
-    svg.close.icon.icon-close(href="", title="{{'COMMON.CLOSE' | translate}}")
-        use(xlink:href="#icon-close")
+    tg-svg.close(
+        svg-icon="icon-close"
+        svg-title="COMMON.CLOSE"
+    )
     h2.title(ng-bind-html="'SUBSCRIPTIONS.SELECT_PLAN.TITLE' | translate")
     p.subtitle(ng-bind-html="'SUBSCRIPTIONS.SELECT_PLAN.SUBTITLE' | translate")
     .subscription-your-plan
